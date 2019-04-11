@@ -11,7 +11,7 @@ if($method == 'POST'){
     $city = $json->result->parameters->cities;
     $help = $json->result->parameters->HelpEntities;
  
-if ($help!=null){
+ 
     $ch = curl_init(); 
 //curl_setopt($ch, CURLOPT_URL, 'http://88.247.29.227/test.php?link=https://admin-turkey.servicesadvisor.org/en/api/v1.0/service_location?fields=serviceName,endDate%26filter[region]=464%26filter[servicesProvided]='.$_GET['link']); 
 curl_setopt($ch, CURLOPT_URL, 'http://help.unhcr.org/turkey/wp-json/wp/v2/pages/'.$help); 
@@ -24,16 +24,8 @@ $varsDate = json_decode($result, true);
  
 //echo $vars1->content->rendered;
 $eResult= $vars1->content->rendered;
-   $response = new \stdClass();
-    $response->speech = $eResult;
-    $response->displayText = $speech;
-    $response->source = "webhook";
-    $u= json_encode($response);
  
-echo $u;
-}
-else
-{    
+ 
      
      
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -111,19 +103,30 @@ $cExtra= 'We have '.(count($items)).' '.$sn[0].' services';
 $sn = explode(':', $items2[0]);
 $c= ' and '.(count($items2)).' '.$sn[0].' Services and they are listed below : ';
  
-$speech=$cExtra.$c.$eExtra.' '.$eeExtra;
- 
+if ($eResult!=null){
+$speech=$cExtra.$c.$eExtra.' '.$eeExtra.' and here is some explainations '.$eResult;
+}
 }
 else
 {
+if ($eResult!=null){
+$speech = $c.$e.' and here is some explainations '.$eResult;
+}
+else{
 $speech = $c.$e;
+}
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 else
 {
+if ($eResult!=null){
+$e=$eResult;
+}
+else{
     $e= "We don't have this service in this city";
 $speech = $e;
+}
 }
  
  
@@ -142,7 +145,7 @@ $speech = $e;
 echo $u;
  
 }
-}
+ 
 else
 {
     echo "Method not allowed";

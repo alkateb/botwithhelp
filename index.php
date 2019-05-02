@@ -160,8 +160,8 @@ $speech = $e;
      
   
     $response = new \stdClass();
-    $response->fulfillmentText = '{'.$speech.'}';
     $response->fulfillmentMessages = $speech;
+    $response->text = $speech;
     $response->webhookSource = "webhook";
     $u= json_encode($response);
 echo $u;

@@ -163,7 +163,7 @@ $speech = $e;
     $response->fulfillmentMessages = '[ '.$speech.' ]';
     $response->text = $speech;
     $response->webhookSource = "webhook";
-    $u= json_encode($response);
+    $u=$response;
 echo $u;
 }
 }

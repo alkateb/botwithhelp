@@ -161,7 +161,7 @@ $speech = $e;
   
     $response = new \stdClass();
     $response->fulfillmentText = $speech;
-    $response->fulfillmentMessages->text = $speech;
+    $response->fulfillmentMessages->=$speech;
     $response->source = "webhook";
     $u= json_encode($response);
 	//$u=str_replace('\','',$u);

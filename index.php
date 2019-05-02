@@ -34,9 +34,9 @@ $varsDate = json_decode($result, true);
 //echo $vars1->content->rendered;
 $eResult= $vars1->content->rendered;
 $response = new \stdClass();
-    $response->speech = $eResult;
-    $response->displayText = $speech;
-    $response->source = "webhook";
+    $response->text = $eResult;
+    $response->text = $speech;
+    $response->webhookSource = "webhook";
     $u= json_encode($response);
 	echo $u;
 }
@@ -247,7 +247,7 @@ $e= join(', ', $items);
 if($e!= null){
 //$c= 'We have '.(count($items)).' Services and they are listed below : ';
 $sn = explode(':', $items[0]);
-$c= 'لدينا '.(count($items)).' خدمات '.$sn[0].' وهي موجودة في القائمة أدناه, ';
+$c= '????? '.(count($items)).' ????? '.$sn[0].' ??? ?????? ?? ??????? ?????, ';
 $speech = $c.$e;
 /////////////////////////////////////////////////EXTRA///////////////////////////////////////////////
 $extra = $json->result->parameters->services_entities1;

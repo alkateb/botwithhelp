@@ -160,10 +160,11 @@ $speech = $e;
      
   
     $response = new \stdClass();
-    $response->fulfillmentMessages = '[ '.$speech.' ]';
+    $response->fulfillmentMessages = $speech;
     $response->text = $speech;
     $response->webhookSource = "webhook";
-    $u=$response;
+    $u= json_encode($response);
+	$u=str_replace('\\','');
 echo $u;
 }
 }

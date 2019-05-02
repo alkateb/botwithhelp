@@ -160,11 +160,11 @@ $speech = $e;
      
   
     $response = new \stdClass();
-    $response->text = $speech;
-    $response->text = $speech;
+    $response->fulfillmentMessages = $speech;
+    $response->fulfillmentMessages = $speech;
     $response->webhookSource = "webhook";
-    $u= json_encode($response);
-echo $u;
+   // $u= json_encode($response);
+echo $response;
 }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////STARTARABIC CODE/////////////////////////////////////////////////////////////////////////////////////////////////////////////

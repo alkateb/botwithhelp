@@ -160,9 +160,9 @@ $speech = $e;
      
   
     $response = new \stdClass();
-    $response->speech = $speech;
-    $response->displayText = $speech;
-    $response->source = "webhook";
+    $response->text = $speech;
+    $response->text = $speech;
+    $response->webhookSource = "webhook";
     $u= json_encode($response);
 echo $u;
 }
@@ -189,9 +189,9 @@ $varsDate = json_decode($result, true);
 //echo $vars1->content->rendered;
 $eResult= $vars1->content->rendered;
 $response = new \stdClass();
-    $response->speech = $eResult;
-    $response->displayText = $speech;
-    $response->source = "webhook";
+    $response->text = $eResult;
+    $response->text = $speech;
+    $response->webhookSource = "webhook";
     $u= json_encode($response);
 	echo $u;
 }
@@ -314,9 +314,9 @@ $speech = $e;
      
   
     $response = new \stdClass();
-    $response->speech = $speech;
-    $response->displayText = $speech;
-    $response->source = "webhook";
+    $response->text = $speech;
+    $response->text = $speech;
+    $response->webhookSource = "webhook";
     $u= json_encode($response);
 echo $u;
 }

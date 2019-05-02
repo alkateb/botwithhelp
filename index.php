@@ -164,7 +164,7 @@ $speech = $e;
     $response->text = $speech;
     $response->webhookSource = "webhook";
     $u= json_encode($response);
-	$u=str_replace('\\','');
+	$u=str_replace('\\','',$u);
 echo $u;
 }
 }

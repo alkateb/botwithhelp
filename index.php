@@ -249,7 +249,7 @@ $e= join(', ', $items);
 if($e!= null){
 //$c= 'We have '.(count($items)).' Services and they are listed below : ';
 $sn = explode(':', $items[0]);
-$c= '????? '.(count($items)).' ????? '.$sn[0].' ??? ?????? ?? ??????? ?????, ';
+$c= 'لدينا '.(count($items)).' خدمات '.$sn[0].' وهي موجودة في القائمة أدناه, ';
 $speech = $c.$e;
 /////////////////////////////////////////////////EXTRA///////////////////////////////////////////////
 $extra = $json->result->parameters->services_entities1;
